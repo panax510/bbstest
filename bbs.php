@@ -38,7 +38,7 @@
      <h1>掲示板</h1>
      <p><a href="index.php">トップへ戻る</a> </p>
      <!-- 書き込みフォーム -->
-     <form class="" action="write.php" method="post">
+     <form class="" action="bbswrite.php" method="post">
        <!-- 初期値はログインユーザー名 -->
        <p>名前：<input type="text" name="name" value="<?php echo $_COOKIE['name'] ?>"></p>
        <p>タイトル：<input type="text" name="title" value=""></p>
@@ -56,7 +56,7 @@
       <p>タイトル：<?php echo $row['title'] ?></p>
       <p><?php echo nl2br(htmlspecialchars($row['body'], ENT_QUOTES, 'UTF-8'), false) ?></p>
       <p><?php echo $row['date'] ?></p>
-      <form class="" action="del.php" method="post">
+      <form class="" action="bbsdel.php" method="post">
         <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
         削除用パスワード：<input type="password" name="pass">
         <input type="submit" name="" value="削除">
