@@ -31,6 +31,7 @@
  <!DOCTYPE html>
  <html lang="ja" dir="ltr">
    <head>
+     <link rel="stylesheet" href="css/style.css">
      <meta charset="utf-8">
      <title>掲示板</title>
    </head>
@@ -39,11 +40,10 @@
      <p><a href="index.php">トップへ戻る</a> </p>
      <!-- 書き込みフォーム -->
      <form class="" action="bbswrite.php" method="post">
-       <!-- 初期値はログインユーザー名 -->
        <p>名前：<input type="text" name="name" value="<?php echo $_COOKIE['name'] ?>"></p>
        <p>タイトル：<input type="text" name="title" value=""></p>
        <textarea name="body" rows="10" cols="100"></textarea>
-       <p>削除用パスワード（数字4桁）：<input type="text" name="pass" value=""></p>
+       <p>削除用パスワード（数字4桁）：<input type="text" class="bbspass" name="pass" value=""></p>
        <input type="submit" name="" value="書き込む">
        <input type="hidden" name="token" value="<?php echo sha1(session_id()); ?>">
      </form>
@@ -58,7 +58,7 @@
       <p><?php echo $row['date'] ?></p>
       <form class="" action="bbsdel.php" method="post">
         <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
-        削除用パスワード：<input type="password" name="pass">
+        削除用パスワード：<input type="password" class="bbspass" name="pass">
         <input type="submit" name="" value="削除">
         <input type="hidden" name="token" value="<?php echo sha1(session_id()); ?>">
       </form>

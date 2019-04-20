@@ -14,7 +14,7 @@
      <h1>交流サイト</h1>
      <h2>メニュー</h2>
      <p>
-       <a href="album.php">フォトアルバム</a>
+       <a href="picalbum.php">フォトアルバム</a>
        <a href="bbs.php">掲示板</a>
        <a href="logout.php">ログアウト</a>
      </p>

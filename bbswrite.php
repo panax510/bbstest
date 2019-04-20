@@ -11,10 +11,10 @@
   if($name==''||$title==''||$body==''){
     header('location: bbs.php');
     exit();
-  }elseif(!preg_match("/^[0-9]{4}$/",$pass))
+  }else if(!preg_match("/^[0-9]{4}$/",$pass)){
     header('location: bbs.php');
     exit();
-  }elseif($token != sha1(session_id())){
+  }else if($token != sha1(session_id())){
     header('location: bbs.php');
     exit();
   }
@@ -28,8 +28,8 @@
     $db = new PDO($dsn, $user, $password);
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     $stmt=$db->prepare("
-      INSERT INTO bbs (name,title,body,date,pass)
-      VALUES (:name, :title, :body, now(), :pass)
+      INSERT INTO bbs(name,title,body,date,pass)
+      VALUES(:name, :title, :body, now(), :pass)
     ");
     $stmt->bindparam(':name', $name, PDO::PARAM_STR);
     $stmt->bindparam(':title', $title, PDO::PARAM_STR);
