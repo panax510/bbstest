@@ -1,6 +1,8 @@
 <?php
   include 'includes/inclogin.php';
 
+// 　画像ダウンロード処理
+
   $filename=$_POST['filename'];
 
   $fpath = 'img/';
@@ -11,7 +13,6 @@
   }else if(!($fp = fopen($fpath,"r"))){
     die("ファイルが開けません");
   }
-
   mb_output_handler("pass");
   header("Content-Type: application/octet-stream");
   header("content-disposition: attachment; filename={$filename}");

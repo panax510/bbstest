@@ -1,6 +1,9 @@
 <?php
   include 'includes/inclogin.php';
 
+// 　掲示板の書き込みを削除する。
+// 　呼び出し元からIDを取得し、削除時のキーにする。
+
   $id=intval($_POST['id']);
   $pass=$_POST['pass'];
   $token=$_POST['token'];

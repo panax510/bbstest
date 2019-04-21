@@ -1,5 +1,8 @@
 <?php
   include 'includes/inclogin.php';
+
+// 　info.txtの中を表示
+
   $fp=fopen("info.txt","r");
   $line=array();
   if($fp){

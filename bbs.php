@@ -1,6 +1,11 @@
 <?php
   include 'includes/inclogin.php';
 
+// 　掲示板
+// 　DBから書き込み内容を取得し、表示する。
+// 　１ページに表示する書き込みは５件。
+// 　トップには掲示板への書き込みフォームを設置。
+
   $num = 5;
   $dsn = 'mysql:host=localhost;dbname=bbs;charset=utf8';
   $user = 'bbsuser';

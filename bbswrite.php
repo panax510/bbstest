@@ -1,6 +1,9 @@
 <?php
   include 'includes/inclogin.php';
 
+// 　掲示板への書き込み処理。
+// 　DBへの更新処理はプリペアドステートメントを採用
+
   $name=$_POST['name'];
   $title=$_POST['title'];
   $body=$_POST['body'];

@@ -1,5 +1,10 @@
 <?php
   include 'includes/inclogin.php';
+
+// 　画像アップロード処理
+// 　ファイル名が重複してもいいように、アップロード時にファイル名を新たにつけて保存する。
+// 　（日付と乱数生成）
+
   $msg = '';
 
   if(isset($_FILES['image']) && is_uploaded_file($_FILES['image']['tmp_name'])){
